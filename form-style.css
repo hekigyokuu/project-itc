@@ -1,0 +1,142 @@
+/* Google Font Parkinsans */
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Parkinsans", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #7aa;
+}
+
+.container {
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    background: #eee;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+}
+
+.container header {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 1000;
+    text-align: center;
+}
+
+.container .form {
+    margin-top: 30px;
+}
+
+.form .input-box {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.input-box label {
+    color: #333;
+    font-weight: 800;
+}
+
+.form .input-box input {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+
+.form .column {
+    display: flex;
+    column-gap: 15px;
+}
+
+.form .gender-box {
+    margin-top: 20px;
+}
+
+.gender-box h3 {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.form :where(.gender-option, .gender) {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+}
+
+.form .gender {
+    column-gap: 5px;
+    cursor: pointer;
+}
+
+.text-box {
+    margin-top: 30px;
+}
+
+.text-box label {
+    color: #333;
+    font-weight: 800;
+}
+
+textarea {
+    resize: none;
+    position: relative;
+    height: 100px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px 15px;
+}
+
+.form button {
+    height: 55px;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 400;
+    background-color: #2aa;
+}
+
+.form a {
+    display: inline-block;       
+    height: 55px;                
+    width: 100%;                 
+    color: #fff;                
+    font-size: 1rem;             
+    text-align: center;          
+    line-height: 55px;           
+    background-color: #2aa;     
+    border-radius: 6px;          
+    font-weight: 400;            
+    text-decoration: none;       
+    cursor: pointer;   
+}
+
+
+.form a:hover {
+    background-color: #9aa;
+}
+
+.form button:hover {
+    background-color: #9aa;
+}
