@@ -1,0 +1,112 @@
+/*Import Poppins Font (Google Fonts)*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/*Universal Style*/
+* {
+    margin: 0;
+    padding: 0;
+    /*Using (box-sizing: border-box) for fixed calculation of area*/
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Body*/
+body {
+    background: #1f242d;
+}
+
+/*Anchor*/
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/*Navbar*/
+.navbar {
+    position: fixed; /*used to have a fixed navigation bar even scrolling*/
+    
+    /*positioned to top-left corner of the screen*/
+    left: 0;
+    top: 0;
+
+    width: 100%; /*streched to the right-left corner of the screen*/
+    padding: 25px 9%; /*25px top-bottom and 9% in right-left corner*/
+    
+    /*used to have space between the logo and nav (a) centering*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /*stacking the .navbar at the very top (highest priority)*/
+    z-index: 100;
+}
+
+/*Logo*/
+.navbar .logo {
+    /*emphasizing the logo of the website through higher font-weight and font-size*/
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/*<ul> Container*/
+.navbar ul {
+    /*if the <ul> is flex it acts as a flex container and its items <li> is horizontally in default*/
+    display: flex;
+}
+
+/*Navigation Text*/
+.navbar ul li {
+    /*rem the bullet in <li> and adding gap or spaces in left of 35px*/
+    list-style: none;
+    margin-left: 35px;
+}
+
+/*Navigation Anchor*/
+.navbar ul li a {
+    /*adding font size and weight to the li also adding transition for hover effect*/
+    font-size: 20px;
+    font-weight: 500;
+    transition: .6s;
+}
+
+/*Navigation Hover Color and Set <li> Active*/
+.navbar ul li:hover a,
+.navbar ul li.active a {
+    color: #ff4500; /*bright red-orange maybe for strong contrast*/
+}
+
+.navbar .dropdown {
+    position: relative;
+}
+
+.navbar .db-content {
+    display: none;
+}
+
+/*Home Content Container*/
+.home {
+    /*making a container that contains flex items ff. and centering its y-axis, customize padding and color*/
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 60px 9% 0;
+    color: #fff;
+}
+
+/*Home <h1>*/
+.home-info h1 {
+    font-size: 55px;
+}
+
+/*Home <h2>*/
+.home-info h2 {
+    font-size: 33px;
+    margin-top: -15px;
+}
+
+/*Home <p>*/
+.home-info p {
+    font-size: 16px;
+    margin: 10px 0 25px;
+}
+
