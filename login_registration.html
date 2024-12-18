@@ -9,14 +9,23 @@
     <title>itc-website</title>
     <!--External CSS-->
     <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1f242d;
+            background-size: cover;
+            background-position: center;
+        }
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             padding: 20px 100px;
-            background: red;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -40,11 +49,17 @@
             position: absolute;
             left: 0;
             bottom: -6px;
-            width: 100px;
+            width: 100%;
             height: 3px;
             background: #fff;
-            border-radius: 5px;
+            transform-origin: right;
+            border-radius: 5px; 
             transform: scaleX(0);
+            transition: transform .5s; 
+        }
+        .navigation a:hover::after{
+            transform-origin: left;
+            transform: scaleX(1);
         }
         header button {
                 width: 130px;
@@ -62,23 +77,24 @@
         }
         header button:hover {
             background: #fff;
-            color: rgb(52, 3, 3);
+            color: #1f242d;
         }
     </style>
 </head>
 <body>
-    <!--Heading ng website, options-->
+    
     <header>
         <h2 class="logo">GYATT</h2>
         <nav class="navigation">
-            <a href="#">Home</a>
-            <a href="#">About</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
             <a href="#">Services</a>
-            <a href="#">Contact</a>
-            <button cladd="btnLogin-popup">Login</button>
+            <a href="#"><i class='bx bx-phone' > Contact</i></a>
+            <a href="#">Profile</a>
+            <button cladd="btnLogin-popup"><b>Login</b></button>
         </nav>
     </header>
-
+    <script src="script.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

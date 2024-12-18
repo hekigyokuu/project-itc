@@ -31,6 +31,8 @@ a {
 
     width: 100%; /*streched to the right-left corner of the screen*/
     padding: 25px 9%; /*25px top-bottom and 9% in right-left corner*/
+
+    background: #1f242d;
     
     /*used to have space between the logo and nav (a) centering*/
     display: flex;
@@ -62,7 +64,7 @@ a {
 }
 
 /*Navigation Anchor*/
-.navbar ul li a {
+.navbar ul li a, .navbar .dropbtn {
     /*adding font size and weight to the li also adding transition for hover effect*/
     font-size: 20px;
     font-weight: 500;
@@ -72,15 +74,46 @@ a {
 /*Navigation Hover Color and Set <li> Active*/
 .navbar ul li:hover a,
 .navbar ul li.active a {
-    color: #ff4500; /*bright red-orange maybe for strong contrast*/
+    color: #00ffcc; /*bright red-orange maybe for strong contrast*/
 }
 
+/*Navigation Dropdown*/
 .navbar .dropdown {
-    position: relative;
+    position: relative; /*anchor the dropdown to dropbtn and ensure relative to its parent class*/
 }
 
+.navbar .dropbtn {
+    transition: .3s;
+}
+
+/* Dropdown Content (Hidden) */
 .navbar .db-content {
     display: none;
+    position: absolute; /*to not make it move just stack upwards*/
+    top: 100%; /*content bellow button*/
+    left: 0;
+    padding: 10px 0;
+    min-width: 170px;
+    border-radius: 8px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    z-index: 101; /*stack into top of nav*/
+}
+
+/* Dropdown Links */
+.navbar .db-content a {
+    padding: 10px 20px; 
+    display: block; /*makes each link a block*/
+    transition: 0.3s ease; 
+}
+
+/* Hover State for Links */
+.navbar .db-content a:hover {
+    background-color: #444; /*lighter background of the block*/
+}
+
+/* Show Dropdown Content on Hover */
+.navbar .dropdown:hover .db-content {
+    display: block; /*showing the dropdown again*/
 }
 
 /*Home Content Container*/
@@ -110,3 +143,7 @@ a {
     margin: 10px 0 25px;
 }
 
+hr {
+    border: 1px solid #fff;
+}
+/*---------------------LOGIN_AND_REGISTRATION-------------------*/
