@@ -1,7 +1,8 @@
+/*GLOBAL STYLE*/
+
 /*Import Poppins Font (Google Fonts)*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-/*Universal Style*/
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +13,7 @@
 
 /*Body*/
 body {
-    background: #1f242d;
+    background: #242c36;
 }
 
 /*Anchor*/
@@ -30,7 +31,7 @@ a {
     top: 0;
 
     width: 100%; /*streched to the right-left corner of the screen*/
-    padding: 25px 9%; /*25px top-bottom and 9% in right-left corner*/
+    padding: 20px 9%; /*25px top-bottom and 9% in right-left corner*/
 
     background: #1f242d;
     
@@ -41,6 +42,12 @@ a {
 
     /*stacking the .navbar at the very top (highest priority)*/
     z-index: 100;
+}
+
+.navbar a i {
+    margin-right: 5px; 
+    font-size: 20px;
+    color: #fff; 
 }
 
 /*Logo*/
@@ -54,6 +61,77 @@ a {
 .navbar ul {
     /*if the <ul> is flex it acts as a flex container and its items <li> is horizontally in default*/
     display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+/*Anchor Links in Navbar --Rokkie-or-Nath*/
+.navbar ul a {
+    position: relative;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+/*Underline Hover in Anchor (before 1s)*/
+.navbar ul a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    transform-origin: right;
+    border-radius: 5px; 
+    transform: scaleX(0);
+    transition: transform 1s; 
+}
+ 
+/*Underline Hover in Anchor (after 1s)*/
+.navbar ul a:hover::after { 
+    transform-origin: left;
+    transform: scaleX(1);
+    background: #00ffcc;
+}
+
+/*Header Button*/
+.navbar button {
+    width: 110px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s;
+}
+
+/*Button Hover --Rokkie-or-Nath*/
+.navbar button:hover {
+    background: #fff;
+    color: #1f242d;
+}
+
+.navbar button .login-button {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .login-button:hover {
+    color: #1f242d;
+}
+
+.navbar .login-button:hover::after {
+    transform: scaleX(0);
+    background: transparent;
 }
 
 /*Navigation Text*/
@@ -73,7 +151,9 @@ a {
 
 /*Navigation Hover Color and Set <li> Active*/
 .navbar ul li:hover a,
-.navbar ul li.active a {
+.navbar ul li:hover a i,
+.navbar ul li.active a,
+.navbar ul li.active a i {
     color: #00ffcc; /*bright red-orange maybe for strong contrast*/
 }
 
@@ -82,6 +162,7 @@ a {
     position: relative; /*anchor the dropdown to dropbtn and ensure relative to its parent class*/
 }
 
+/*Display block transition*/
 .navbar .dropbtn {
     transition: .3s;
 }
@@ -116,6 +197,9 @@ a {
     display: block; /*showing the dropdown again*/
 }
 
+
+/*HOME PAGE STYLE*/
+
 /*Home Content Container*/
 .home {
     /*making a container that contains flex items ff. and centering its y-axis, customize padding and color*/
@@ -143,7 +227,73 @@ a {
     margin: 10px 0 25px;
 }
 
+
+/*FEED STYLE*/
+
+/*Feed Content Container*/
+.feed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 60px 9% 0;
+    color: #fff;
+    background: #1f242d;
+}
+
+.feed-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+    background: #eee;
+    border-radius: 3px;
+}
+
+.feed-info h2 {
+    font-size: 33px;
+    margin-top: -15px;
+    text-align: left;
+    color: #333;
+}
+
+.feed-info p {
+    font-size: 16px;
+    margin: 10px 0 10px;
+    color: #555;
+    line-height: 1.6;
+    text-align: left;
+}
+
+
+/*Horizonal Rule Border*/
 hr {
     border: 1px solid #fff;
 }
-/*---------------------LOGIN_AND_REGISTRATION-------------------*/
+
+/*RESOURCE STYLE*/
+
+/*ABOUT STYLE*/
+/*About Content Container*/
+.about-website, .about-author {
+    /*making a container that contains flex items ff. and centering its y-axis, customize padding and color*/
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 60px 9% 0;
+    color: #fff;
+}
+
+/*About <h2>*/
+.about-website h2 {
+    font-size: 33px;
+    margin-top: -15px;
+}
+
+/*About <p>*/
+.about-website p {
+    font-size: 16px;
+    margin: 10px 0 25px;
+}
+
+
+/*LOGIN AND REGISTRATION STYLE*/
