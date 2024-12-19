@@ -14,11 +14,12 @@
 /*Body*/
 body {
     background: #242c36;
+    color: #d3d3d3;
 }
 
 /*Anchor*/
 a {
-    color: #fff;
+    color: #d3d3d3;
     text-decoration: none;
 }
 
@@ -47,7 +48,7 @@ a {
 .navbar a i {
     margin-right: 5px; 
     font-size: 20px;
-    color: #fff; 
+    color: #d3d3d3; 
 }
 
 /*Logo*/
@@ -70,7 +71,7 @@ a {
 .navbar ul a {
     position: relative;
     font-size: 20px;
-    color: #fff;
+    color: #d3d3d3;
     text-decoration: none;
     font-weight: 500;
     margin-left: 5px;
@@ -103,7 +104,7 @@ a {
     width: 110px;
     height: 50px;
     background: transparent;
-    border: 2px solid #fff;
+    border: 2px solid #d3d3d3;
     outline: none;
     border-radius: 8px;
     cursor: pointer;
@@ -116,12 +117,12 @@ a {
 
 /*Button Hover --Rokkie-or-Nath*/
 .navbar button:hover {
-    background: #fff;
+    background: #d3d3d3;
     color: #1f242d;
 }
 
 .navbar button .login-button {
-    color: #fff;
+    color: #d3d3d3;
     text-decoration: none;
 }
 
@@ -154,7 +155,7 @@ a {
 .navbar ul li:hover a i,
 .navbar ul li.active a,
 .navbar ul li.active a i {
-    color: #00ffcc; /*bright red-orange maybe for strong contrast*/
+    color: #00ffcc; /*bright blue maybe for strong contrast*/
 }
 
 /*Navigation Dropdown*/
@@ -176,6 +177,7 @@ a {
     padding: 10px 0;
     min-width: 170px;
     border-radius: 8px;
+    background-color: #1f242d;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
     z-index: 101; /*stack into top of nav*/
 }
@@ -189,7 +191,7 @@ a {
 
 /* Hover State for Links */
 .navbar .db-content a:hover {
-    background-color: #444; /*lighter background of the block*/
+    background-color: #4f4f4f; /*lighter background of the block*/
 }
 
 /* Show Dropdown Content on Hover */
@@ -207,7 +209,7 @@ a {
     align-items: center;
     height: 100vh;
     padding: 60px 9% 0;
-    color: #fff;
+    color: #d3d3d3;
 }
 
 /*Home <h1>*/
@@ -235,18 +237,18 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    padding: 60px 9% 0;
-    color: #fff;
-    background: #1f242d;
+    padding: 60px 5% 0;
+    color: #d3d3d3;
+    min-height: 100vh;
 }
 
 .feed-info {
     max-width: 1200px;
     margin: 0 auto;
     padding: 50px;
-    background: #eee;
+    background: #d3d3d3;
     border-radius: 3px;
+    height: auto;
 }
 
 .feed-info h2 {
@@ -274,19 +276,24 @@ hr {
 
 /*ABOUT STYLE*/
 /*About Content Container*/
-.about-website, .about-author {
+
+.about-website {
+    margin-top: 80px;
+}
+.about-website {
     /*making a container that contains flex items ff. and centering its y-axis, customize padding and color*/
     display: flex;
     align-items: center;
-    height: 100vh;
-    padding: 60px 9% 0;
-    color: #fff;
+    padding: 60px 5%;
+    color: #d3d3d3;
+    width: 100%;
 }
 
-/*About <h2>*/
-.about-website h2 {
-    font-size: 33px;
-    margin-top: -15px;
+
+/*About <h1>*/
+.about-website h1 {
+    text-align: left;
+    font-size: 25px;
 }
 
 /*About <p>*/
@@ -295,5 +302,30 @@ hr {
     margin: 10px 0 25px;
 }
 
+.about-website table {
+    color: #d3d3d3;
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+.about-website th, .about-website td {
+    padding: 10px;
+    text-align: left;
+}
+
+.about-website thead th {
+    text-align: center;
+    font-size: 25px;
+}
+
+.about-website caption {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-website table .author-name {
+    color: #00ffcc;
+}
 
 /*LOGIN AND REGISTRATION STYLE*/

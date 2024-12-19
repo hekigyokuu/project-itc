@@ -11,20 +11,26 @@
     <link rel="stylesheet" href="styles.css">
     <!--Import icons in Boxicons.com-->
     <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        .navbar ul li.dropdown a,
+        .navbar ul li.dropdown a i {
+            color: #00ffcc;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <a href="#" class="logo">Name?</a>
         <ul>
             <li><a href="index.html"><i class='bx bx-home-alt-2' ></i>Home</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn"><i class='bx bx-rectangle'></i>Feed</i></a>
-                <div class="db-content">
-                    <a href="#food" style="color: #fff;">Food</a>
-                    <a href="#travel" style="color: #fff;">Travel</a>
-                    <a href="#memes" style="color: #fff;">Memes</a>
-                </div>
-            </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class='bx bx-rectangle'></i>Feed</a>
+                    <div class="db-content">
+                        <a href="#food" style="color: #d3d3d3;">Food</a>
+                        <a href="#travel" style="color: #d3d3d3;">Travel</a>
+                        <a href="#memes" style="color: #d3d3d3;">Memes</a>
+                    </div>
+                </li>
             <li><a href="resource.html"><i class='bx bx-box' ></i>Resources</a></li>
             <li><a href="about.html"><i class='bx bx-id-card'></i>About</a></li>
             <button><a href="login_registration.html" class="login-button"><b>Login</b></a></button>

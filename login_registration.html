@@ -7,8 +7,6 @@
     <!--For the responsiveness of website-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>itc-website</title>
-    <!--External CSS-->
-    <link rel="stylesheet" href="styles.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
@@ -141,12 +139,26 @@
             background-position: center;
         }
         .container .content {
-            width: 50%;
+            position: absolute;
+            top: 0%;
+            left: 0;
+            width: 58%;
             height: 100%;
             background: purple;
         }
-        .container .skibidi-box{
-
+        .container .logo {
+            font-size: 30px;
+        }
+        .container .skibidi-box {
+            position: absolute;
+            top: 0%;
+            right: 0;
+            width: calc (100% - 58%);
+            height: 100%;
+            background: blue;
+        }
+        .container .welcome{
+            font-size: 40px;
         }
     </style>
 </head>
@@ -169,7 +181,23 @@
     </form>
 
     <div class="container">
-        <div class="content"></div>
+        <div class="content">
+            <h2 class="logo"><i class="Skibidi-Toilet"></i>
+            Crazy</h2>
+
+            <div class="text-sci">
+                <h2 class="Welcome">Welcome<br><spam> to our 
+                    website</spam>
+                </h2>
+                <p>this is for educataional purposes only</p>
+                <div class="social-icons">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-instagram' ></i></a>
+                    <a href="#"><i class='bx bxl-twitter' ></i></a>
+                    <a href="#"><i class='bx bxl-tiktok' ></i></a>
+                </div>
+            </div>
+        </div>
 
         <div class="skibidi-box"></div>
     </div>
