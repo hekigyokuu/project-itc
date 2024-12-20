@@ -15,6 +15,11 @@
 body {
     background: #242c36;
     color: #d3d3d3;
+    background-image: url('img/pixelcity.png');
+    background-size: cover; 
+    background-position: center center;
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
 }
 
 /*Anchor*/
@@ -34,7 +39,8 @@ a {
     width: 100%; /*streched to the right-left corner of the screen*/
     padding: 20px 9%; /*25px top-bottom and 9% in right-left corner*/
 
-    background: #1f242d;
+    background: #121b24aa;
+    box-shadow: 0 0 20px #000;
     
     /*used to have space between the logo and nav (a) centering*/
     display: flex;
@@ -124,6 +130,7 @@ a {
 .navbar button .login-button {
     color: #d3d3d3;
     text-decoration: none;
+    display: block;
 }
 
 .navbar .login-button:hover {
@@ -177,8 +184,8 @@ a {
     padding: 10px 0;
     min-width: 170px;
     border-radius: 8px;
-    background-color: #1f242d;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    background: #121b24aa;
+    box-shadow: 0 3px 3px #000;
     z-index: 101; /*stack into top of nav*/
 }
 
@@ -191,7 +198,7 @@ a {
 
 /* Hover State for Links */
 .navbar .db-content a:hover {
-    background-color: #4f4f4f; /*lighter background of the block*/
+    background-color: #bdc3c755; /*lighter background of the block*/
 }
 
 /* Show Dropdown Content on Hover */
@@ -229,6 +236,15 @@ a {
     margin: 10px 0 25px;
 }
 
+.home-info .to-feedback {
+    color: #00ffcc;
+    transition: .3s ease;
+}
+
+.home-info .to-feedback:hover {
+    color: #009d80;
+}
+
 
 /*FEED STYLE*/
 
@@ -246,7 +262,7 @@ a {
     max-width: 1200px;
     margin: 0 auto;
     padding: 50px;
-    background: #d3d3d3;
+    background: #d3d3d3dd;
     border-radius: 3px;
     height: auto;
 }
@@ -289,7 +305,6 @@ hr {
     width: 100%;
 }
 
-
 /*About <h1>*/
 .about-website h1 {
     text-align: left;
@@ -329,3 +344,75 @@ hr {
 }
 
 /*LOGIN AND REGISTRATION STYLE*/
+
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#login .login-container {
+    background: #121b24aa;
+    box-shadow: 0 5px 5px 0 #000;
+    padding: 20px;
+    min-width: 40%;
+    border-radius: 7px;
+}
+
+.login-container h1 {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.login-container input {
+    padding: 7px;
+    width: 100%;
+    border-style: none;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    background-color: #eee;
+}
+
+.login-container .login-button {
+    display: flex;
+    justify-content: center;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 7px;
+    border-radius: 4px;
+    border-style: none;
+    background-color: #00ffcc;
+    transition: .3s ease;
+}
+
+.login-container button a {
+    display: block;
+    color: #1f242d;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.login-container button:hover {
+    background-color: #009d80;
+}
+
+.login-container button:hover a {
+    color: white;
+}    
+
+.login-container p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-container p a {
+    color: #00ffcc;
+    transition: .3s ease;
+}
+
+.login-container p a:hover {
+    color: #009d80;
+}
