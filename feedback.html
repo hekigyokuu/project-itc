@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--Tell a browser to use latest rendering engine available-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--For the responsiveness of website-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itc-website</title>
+    <!--External CSS-->
+    <link rel="stylesheet" href="styles.css">
+    <!--Import icons in Boxicons.com-->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin-bottom: 70px;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="" id="feedback">
+        <div class="feedback-container">
+            <label for="user-firstname"><b>First Name</b></label><br>
+            <input type="text" name="user-firstname" placeholder="Juan" required>
+            <br>
+            <label for="user-lastname"><b>Last Name</b></label><br>
+            <input type="text" name="user-lastname" placeholder="Dela Cruz" required>
+            <br>
+            <label for="user-birthday"><b>Birthday</b></label><br>
+            <input type="date" name="user-birthday" required>
+            <br>
+            <label for="user-email"><b>Email</b></label><br>
+            <input type="email" name="user-email" placeholder="juandelacruz@email.com">
+            <br>
+            <div class="gender">
+                <label for="gender"><b>Gender</b></label><br>
+                <input type="radio" name="gender" value="male" required> <i>Male</i>
+                <input type="radio" name="gender" value="female" required> <i>Female</i>
+                <input type="radio" name="gender" value="n/a" required> <i>Prefer not to say</i>
+            </div>
+            <label for="file-upload"><b>Upload Image Feedback</b></label><br>
+            <input type="file" name="file-upload" accept="image/*">
+            <br>
+            <label for="user-feedback"><b>Feedback</b></label><br>
+            <textarea name="user-feedback" cols="50" rows="10" placeholder="add your feedback here..."></textarea>
+            <br><br>
+            <div class="submit-button">
+                <input type="reset" value="Reset">
+                <input type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+</body>
+</html>

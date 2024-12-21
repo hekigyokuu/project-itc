@@ -192,6 +192,7 @@ a {
 /* Dropdown Links */
 .navbar .db-content a {
     padding: 10px 20px; 
+    width: 160px;
     display: block; /*makes each link a block*/
     transition: 0.3s ease; 
 }
@@ -245,6 +246,34 @@ a {
     color: #009d80;
 }
 
+.feature ,.feedback{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    color: #d3d3d3;
+    padding: 0;
+    background-color: #121b2499;
+}
+
+.feature-container, .feedback-container {
+    width: 100%;
+    padding: 60px 9% 0;
+}
+
+.feature-container h1, .feedback-container h1 {
+    margin: 0 0 20px;
+    font-size: 35px;
+    text-align: left;
+}
+
+.feature-container iframe, .feedback-container iframe {
+    border: none;
+    width: 100%;
+    height: calc(100vh - 180px);
+    max-height: 800px;
+    border-radius: 8px;
+}
 
 /*FEED STYLE*/
 
@@ -253,7 +282,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 5% 0;
+    padding: 100px 5% 0;
     color: #d3d3d3;
     min-height: 100vh;
 }
@@ -262,8 +291,8 @@ a {
     max-width: 1200px;
     margin: 0 auto;
     padding: 50px;
-    background: #d3d3d3dd;
-    border-radius: 3px;
+    background: #d3d3d3;
+    border-radius: 3px; 
     height: auto;
 }
 
@@ -279,25 +308,38 @@ a {
     margin: 10px 0 10px;
     color: #555;
     line-height: 1.6;
-    text-align: left;
+    text-align: justify;
+}
+
+#foods .feed-info .float-left{
+    float: left;
+    margin-right: 30px;
+    box-shadow: 3px 3px #000000aa;
+}
+
+#beverages .feed-info .float-left{
+    float: left;
+    margin-right: 30px;
+    box-shadow: 3px 3px #000000aa;
 }
 
 
 /*Horizonal Rule Border*/
 hr {
+    margin: 100px 0 0 0;
     border: 1px solid #fff;
 }
 
-/*RESOURCE STYLE*/
+/*FEATURE STYLE*/
+
+
 
 /*ABOUT STYLE*/
 /*About Content Container*/
 
 .about-website {
-    margin-top: 80px;
-}
-.about-website {
     /*making a container that contains flex items ff. and centering its y-axis, customize padding and color*/
+    margin-top: 80px;
     display: flex;
     align-items: center;
     padding: 60px 5%;
@@ -345,14 +387,14 @@ hr {
 
 /*LOGIN AND REGISTRATION STYLE*/
 
-#login {
+#login, #register {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-#login .login-container {
+#login .forms-container, #register .forms-container {
     background: #121b24aa;
     box-shadow: 0 5px 5px 0 #000;
     padding: 20px;
@@ -360,12 +402,12 @@ hr {
     border-radius: 7px;
 }
 
-.login-container h1 {
+.forms-container h1 {
     margin-bottom: 25px;
     text-align: center;
 }
 
-.login-container input {
+.forms-container input {
     padding: 7px;
     width: 100%;
     border-style: none;
@@ -374,12 +416,12 @@ hr {
     background-color: #eee;
 }
 
-.login-container .login-button {
+.forms-container .forms-button {
     display: flex;
     justify-content: center;
 }
 
-.login-container button {
+.forms-container button {
     width: 100%;
     padding: 7px;
     border-radius: 4px;
@@ -388,31 +430,93 @@ hr {
     transition: .3s ease;
 }
 
-.login-container button a {
+.forms-container button a {
     display: block;
     color: #1f242d;
     cursor: pointer;
     transition: .3s ease;
 }
 
-.login-container button:hover {
+.forms-container button:hover {
     background-color: #009d80;
 }
 
-.login-container button:hover a {
+.forms-container button:hover a {
     color: white;
 }    
 
-.login-container p {
+.forms-container p {
     text-align: center;
     margin-top: 10px;
 }
 
-.login-container p a {
+.forms-container p a {
     color: #00ffcc;
     transition: .3s ease;
 }
 
-.login-container p a:hover {
+.forms-container p a:hover {
     color: #009d80;
+}
+
+
+/*FEEDBACK*/
+.feedback-container input:not(input[type="file"], input[type="submit"], input[type="reset"], input[type="radio"]), .feedback-container textarea {
+    padding: 7px;
+    width: 100%;
+    border-style: none;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    background-color: #eee;
+}
+
+.feedback-container input[type="radio"] {
+    border-style: none;
+    margin-bottom: 10px;
+    background-color: #eee;
+}
+
+.feedback-container .gender {
+    border-style: none;
+    border-radius: 2px;
+    margin-bottom: 3px;
+}
+
+.feedback-container i {
+    margin-right: 20px;
+}
+
+.feedback-container textarea {
+    resize: none;
+}
+
+.feedback-container .feedback-button {
+    display: flex;
+    justify-content: center;
+}
+
+.feedback-container input[type="file"] {
+    margin-bottom: 10px;
+}
+
+.feedback-container input[type="submit"], 
+.feedback-container input[type="reset"] {
+    width: 100%;
+    padding: 7px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border-style: none;
+    background-color: #00ffcc;
+    transition: .3s ease;
+    display: block;
+    color: #1f242d;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.feedback-container input[type="submit"]:hover, 
+.feedback-container input[type="reset"]:hover {
+    background-color: #009d80;
+    color: #fff;
 }
