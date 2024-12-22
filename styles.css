@@ -3,6 +3,16 @@
 /*Import Poppins Font (Google Fonts)*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+:root {
+    --clr-bg: #242c36;
+    --clr-block: #121b24aa;
+    --clr-text-light: #d3d3d3;
+    --clr-text-dark: #1f242d;
+    --clr-text-bg: #d3d3d3;
+    --clr-text-hover: #00ffcc;
+    --clr-img-shadow: #000000aa;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +23,7 @@
 
 /*Body*/
 body {
-    background: #242c36;
+    background: var(--clr-bg);
     color: #d3d3d3;
     background-image: url('img/pixelcity.png');
     background-size: cover; 
@@ -24,7 +34,7 @@ body {
 
 /*Anchor*/
 a {
-    color: #d3d3d3;
+    color: var(--clr-text-light);
     text-decoration: none;
 }
 
@@ -39,7 +49,7 @@ a {
     width: 100%; /*streched to the right-left corner of the screen*/
     padding: 20px 9%; /*25px top-bottom and 9% in right-left corner*/
 
-    background: #121b24aa;
+    background: var(--clr-block);
     box-shadow: 0 0 20px #000;
     
     /*used to have space between the logo and nav (a) centering*/
@@ -54,7 +64,7 @@ a {
 .navbar a i {
     margin-right: 5px; 
     font-size: 20px;
-    color: #d3d3d3; 
+    color: var(--clr-text-light); 
 }
 
 /*Logo*/
@@ -77,7 +87,7 @@ a {
 .navbar ul a {
     position: relative;
     font-size: 20px;
-    color: #d3d3d3;
+    color: var(--clr-text-light);
     text-decoration: none;
     font-weight: 500;
     margin-left: 5px;
@@ -102,7 +112,7 @@ a {
 .navbar ul a:hover::after { 
     transform-origin: left;
     transform: scaleX(1);
-    background: #00ffcc;
+    background: var(--clr-text-hover);
 }
 
 /*Header Button*/
@@ -110,12 +120,11 @@ a {
     width: 110px;
     height: 50px;
     background: transparent;
-    border: 2px solid #d3d3d3;
+    border: 2px solid var(--clr-text-bg);
     outline: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 1.1em;
-    color: #fff;
     font-weight: 500;
     margin-left: 40px;
     transition: 0.5s;
@@ -123,18 +132,18 @@ a {
 
 /*Button Hover --Rokkie-or-Nath*/
 .navbar button:hover {
-    background: #d3d3d3;
-    color: #1f242d;
+    background: var(--clr-text-bg);
+    color: var(--clr-text-dark);
 }
 
 .navbar button .login-button {
-    color: #d3d3d3;
+    color: var(--clr-text-light);
     text-decoration: none;
     display: block;
 }
 
 .navbar .login-button:hover {
-    color: #1f242d;
+    color: var(--clr-text-dark);
 }
 
 .navbar .login-button:hover::after {
@@ -150,7 +159,8 @@ a {
 }
 
 /*Navigation Anchor*/
-.navbar ul li a, .navbar .dropbtn {
+.navbar ul li a, 
+.navbar .dropbtn {
     /*adding font size and weight to the li also adding transition for hover effect*/
     font-size: 20px;
     font-weight: 500;
@@ -162,7 +172,7 @@ a {
 .navbar ul li:hover a i,
 .navbar ul li.active a,
 .navbar ul li.active a i {
-    color: #00ffcc; /*bright blue maybe for strong contrast*/
+    color: var(--clr-text-hover); /*bright blue maybe for strong contrast*/
 }
 
 /*Navigation Dropdown*/
@@ -184,7 +194,7 @@ a {
     padding: 10px 0;
     min-width: 170px;
     border-radius: 8px;
-    background: #121b24aa;
+    background: var(--clr-block);
     box-shadow: 0 3px 3px #000;
     z-index: 101; /*stack into top of nav*/
 }
@@ -217,12 +227,14 @@ a {
     align-items: center;
     height: 100vh;
     padding: 60px 9% 0;
-    color: #d3d3d3;
+    color: var(--clr-text-light);
 }
 
 /*Home <h1>*/
 .home-info h1 {
     font-size: 55px;
+    color: #009d80;
+    text-shadow: 2px 2px var(--clr-text-hover);
 }
 
 /*Home <h2>*/
@@ -238,7 +250,7 @@ a {
 }
 
 .home-info .to-feedback {
-    color: #00ffcc;
+    color: var(--clr-text-hover);
     transition: .3s ease;
 }
 
@@ -246,28 +258,33 @@ a {
     color: #009d80;
 }
 
-.feature ,.feedback{
+.feature, 
+.feedback{
     display: flex;
     justify-content: center;
     align-items: flex-start;
     height: 100vh;
-    color: #d3d3d3;
+    color: var(--clr-text-light);
     padding: 0;
     background-color: #121b2499;
+    box-shadow: 5px 0 0 0 #000;
 }
 
-.feature-container, .feedback-container {
+.feature-container, 
+.feedback-container {
     width: 100%;
     padding: 60px 9% 0;
 }
 
-.feature-container h1, .feedback-container h1 {
+.feature-container h1, 
+.feedback-container h1 {
     margin: 0 0 20px;
     font-size: 35px;
     text-align: left;
 }
 
-.feature-container iframe, .feedback-container iframe {
+.feature-container iframe, 
+.feedback-container iframe {
     border: none;
     width: 100%;
     height: calc(100vh - 180px);
@@ -283,7 +300,6 @@ a {
     align-items: center;
     justify-content: center;
     padding: 100px 5% 0;
-    color: #d3d3d3;
     min-height: 100vh;
 }
 
@@ -291,16 +307,18 @@ a {
     max-width: 1200px;
     margin: 0 auto;
     padding: 50px;
-    background: #d3d3d3;
+    background: var(--clr-text-bg);
     border-radius: 3px; 
     height: auto;
+    margin-bottom: 70px;
 }
 
 .feed-info h2 {
     font-size: 33px;
     margin-top: -15px;
     text-align: left;
-    color: #333;
+    color: #009d80;
+    text-shadow: 2px 2px #004040;
 }
 
 .feed-info p {
@@ -314,15 +332,20 @@ a {
 #foods .feed-info .float-left{
     float: left;
     margin-right: 30px;
-    box-shadow: 3px 3px #000000aa;
+    box-shadow: 3px 3px var(--clr-img-shadow);
 }
 
 #beverages .feed-info .float-left{
     float: left;
     margin-right: 30px;
-    box-shadow: 3px 3px #000000aa;
+    box-shadow: 3px 3px var(--clr-img-shadow);
 }
 
+#travel .feed-info .float-left{
+    float: left;
+    margin-right: 30px;
+    box-shadow: 3px 3px var(--clr-img-shadow);
+}
 
 /*Horizonal Rule Border*/
 hr {
@@ -343,7 +366,7 @@ hr {
     display: flex;
     align-items: center;
     padding: 60px 5%;
-    color: #d3d3d3;
+    color: var(--clr-text-light);
     width: 100%;
 }
 
@@ -356,16 +379,19 @@ hr {
 /*About <p>*/
 .about-website p {
     font-size: 16px;
-    margin: 10px 0 25px;
+    margin: 10px 20px 25px;
+    text-align: justify;
 }
 
 .about-website table {
-    color: #d3d3d3;
+    color: var(--clr-text-light);
     width: 100%;
     border-collapse: collapse; 
+    margin-bottom: 30px;
 }
 
-.about-website th, .about-website td {
+.about-website th, 
+.about-website td {
     padding: 10px;
     text-align: left;
 }
@@ -382,20 +408,26 @@ hr {
 }
 
 .about-website table .author-name {
-    color: #00ffcc;
+    color: var(--clr-text-hover);
+}
+
+.about-website table a {
+    font-style: italic;
 }
 
 /*LOGIN AND REGISTRATION STYLE*/
 
-#login, #register {
+#login, 
+#register {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-#login .forms-container, #register .forms-container {
-    background: #121b24aa;
+#login .forms-container, 
+#register .forms-container {
+    background: var(--clr-block);
     box-shadow: 0 5px 5px 0 #000;
     padding: 20px;
     min-width: 40%;
@@ -426,7 +458,7 @@ hr {
     padding: 7px;
     border-radius: 4px;
     border-style: none;
-    background-color: #00ffcc;
+    background-color: var(--clr-text-hover);
     transition: .3s ease;
 }
 
@@ -442,7 +474,7 @@ hr {
 }
 
 .forms-container button:hover a {
-    color: white;
+    color: #fff;
 }    
 
 .forms-container p {
@@ -451,7 +483,7 @@ hr {
 }
 
 .forms-container p a {
-    color: #00ffcc;
+    color: var(--clr-text-hover);
     transition: .3s ease;
 }
 
@@ -461,7 +493,10 @@ hr {
 
 
 /*FEEDBACK*/
-.feedback-container input:not(input[type="file"], input[type="submit"], input[type="reset"], input[type="radio"]), .feedback-container textarea {
+.feedback-container input[type="text"],
+.feedback-container input[type="email"],
+.feedback-container input[type="password"],
+.feedback-container textarea {
     padding: 7px;
     width: 100%;
     border-style: none;
@@ -507,10 +542,10 @@ hr {
     margin-bottom: 10px;
     border-radius: 4px;
     border-style: none;
-    background-color: #00ffcc;
+    background-color: var(--clr-text-hover);
     transition: .3s ease;
     display: block;
-    color: #1f242d;
+    color: var(--clr-text-dark);
     cursor: pointer;
     transition: .3s ease;
 }
