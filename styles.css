@@ -329,22 +329,13 @@ a {
     text-align: justify;
 }
 
-#foods .feed-info .float-left{
-    float: left;
-    margin-right: 30px;
-    box-shadow: 3px 3px var(--clr-img-shadow);
-}
-
-#beverages .feed-info .float-left{
-    float: left;
-    margin-right: 30px;
-    box-shadow: 3px 3px var(--clr-img-shadow);
-}
-
+#foods .feed-info .float-left,
+#beverages .feed-info .float-left,
 #travel .feed-info .float-left{
     float: left;
     margin-right: 30px;
     box-shadow: 3px 3px var(--clr-img-shadow);
+    border-radius: 5px;
 }
 
 /*Horizonal Rule Border*/
@@ -554,4 +545,36 @@ hr {
 .feedback-container input[type="reset"]:hover {
     background-color: #009d80;
     color: #fff;
+}
+
+.feed-feature {
+    color: var(--clr-text-light);
+    padding: 0;
+}
+
+.feed-feature-container {
+    width: 100%;
+    padding: 60px 9% 0;
+    margin-bottom: 60px;
+}
+
+.feed-feature-container h2 {
+    text-shadow: 2px 2px #000;
+    font-size: 35px;
+    text-align: left;
+}
+
+.feed-feature-container video {
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px var(--clr-img-shadow);
+}
+
+.feed-feature-container ol li {
+    margin-left: 30px;
+}
+
+.feed-feature-container a,
+.feed-feature-container ol li a {
+    color: var(--clr-text-hover);
 }
