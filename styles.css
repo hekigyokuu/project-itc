@@ -105,7 +105,7 @@ a {
     transform-origin: right;
     border-radius: 5px; 
     transform: scaleX(0);
-    transition: transform 1s; 
+    transition: transform 1s ease; 
 }
  
 /*Underline Hover in Anchor (after 1s)*/
