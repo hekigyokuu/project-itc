@@ -2,36 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!--Tell a browser to use latest rendering engine available-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--For the responsiveness of website-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>About</title>
-    <!--External CSS-->
+
     <link rel="stylesheet" href="styles.css">
-    <!--Import icons in Boxicons.com-->
     <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
+    
     <style>
         body {
             background: #242c36;
         }    
+
+        .about-website {
+            display: flex;
+            align-items: center;
+
+            width: 100%;
+
+            margin-top: 80px;
+            padding: 60px 5%;
+        }
+
+        .about-website h1 {
+            text-align: left;
+            font-size: 25px;
+        }
+
+        .about-website p {
+            margin: 10px 20px 25px;
+
+            font-size: 16px;
+            text-align: justify;
+        }
+
+        .about-website table {
+            width: 100%;
+            border-collapse: collapse; 
+            margin-bottom: 30px;
+        }
+
+        .about-website th, 
+        .about-website td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .about-website thead th {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .about-website caption {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .about-website table .author-name {
+            color: #00ffcc;
+        }
+
+        .about-website table a {
+            font-style: italic;
+            color: #d3d3d3;
+        }
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html" class="logo">tampokLokal</a>
+        <a href="homepage.html" class="logo">tampokLokal</a>
         <ul>
-            <li><a href="index.html"><i class='bx bx-home-alt-2' ></i>Home</a></li>
+            <li><a href="homepage.html"><i class='bx bx-home-alt-2' ></i>Home</a></li>
             <li class="dropdown">
                 <a href="#" class="dropbtn"><i class='bx bx-rectangle'></i>Feed</a>
                 <div class="db-content">
-                    <a href="feed.html#foods" style="color: #d3d3d3;">Foods</a>
-                    <a href="feed.html#beverages" style="color: #d3d3d3;">Beverages</a>
-                    <a href="feed.html#travel" style="color: #d3d3d3;">Travel</a>
+                    <a href="feed.html#foods">Foods</a>
+                    <a href="feed.html#beverages">Beverages</a>
+                    <a href="feed.html#travel">Travel</a>
                 </div>
             </li>
-            <li class="active"><a href="#"><i class='bx bx-id-card'></i>About</a></li>
-            <button><a href="login.html" class="login-button"><b>Login</b></a></button>
+            <li><a href="#" style="color: #00ffcc;"><i class='bx bx-id-card' style="color: #00ffcc";></i>About</a></li>
+            <button><a href="index.html"><b>Logout</b></a></button>
         </ul>
     </nav>
     

@@ -2,19 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!--Tell a browser to use latest rendering engine available-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--For the responsiveness of website-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>itc-website</title>
-    <!--External CSS-->
+    
+    <title>Feedback</title>
+    
     <link rel="stylesheet" href="styles.css">
-    <!--Import icons in Boxicons.com-->
     <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
+    
     <style>
         body {
             background: #242c36;
-            margin-bottom: 70px;
+            padding: 50px 9%;
+        }
+
+        .feedback-container input[type="text"],
+        .feedback-container input[type="email"],
+        .feedback-container input[type="password"],
+        .feedback-container textarea {
+            padding: 7px;
+            width: 100%;
+            border-style: none;
+            border-radius: 2px;
+            margin-bottom: 10px;
+            background-color: #eee;
+        }
+
+        .feedback-container input[type="radio"] {
+            border-style: none;
+            margin-bottom: 10px;
+            background-color: #eee;
+        }
+
+        .feedback-container .gender {
+            border-style: none;
+            border-radius: 2px;
+            margin-bottom: 3px;
+        }
+
+        .feedback-container i {
+            margin-right: 20px;
+        }
+
+        .feedback-container textarea {
+            resize: none;
+        }
+
+        .feedback-container .feedback-button {
+            display: flex;
+            justify-content: center;
+        }
+
+        .feedback-container input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        .feedback-container input[type="submit"], 
+        .feedback-container input[type="reset"] {
+            width: 100%;
+            padding: 7px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border-style: none;
+            background-color: #00ffcc;
+            transition: .3s ease;
+            display: block;
+            color: #1f242d;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+
+        .feedback-container input[type="submit"]:hover, 
+        .feedback-container input[type="reset"]:hover {
+            background-color: #009d80;
+            color: #fff;
         }
     </style>
 </head>

@@ -1,580 +1,201 @@
-/*GLOBAL STYLE*/
-
-/*Import Poppins Font (Google Fonts)*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-:root {
-    --clr-bg: #242c36;
-    --clr-block: #121b24aa;
-    --clr-text-light: #d3d3d3;
-    --clr-text-dark: #1f242d;
-    --clr-text-bg: #d3d3d3;
-    --clr-text-hover: #00ffcc;
-    --clr-img-shadow: #000000aa;
-}
-
+/* GLOBAL AND BODY STYLE */
 * {
-    margin: 0;
     padding: 0;
-    /*Using (box-sizing: border-box) for fixed calculation of area*/
-    box-sizing: border-box; 
+    margin: 0;
+    box-sizing: border-box;
+
     font-family: 'Poppins', sans-serif;
 }
 
-/*Body*/
-body {
-    background: var(--clr-bg);
-    color: #d3d3d3;
-    background-image: url('img/pixelcity.png');
-    background-size: cover; 
-    background-position: center center;
-    background-attachment: fixed; 
-    background-repeat: no-repeat;
+body::-webkit-scrollbar {
+    display: none;
 }
 
-/*Anchor*/
+body {
+    background-image: url(img/pixelcity.png);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    color: #d3d3d3;
+
+    opacity: 0;
+    animation: fadeIn .5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0; 
+    }
+    100% {
+      opacity: 1; 
+    }
+}
+
 a {
-    color: var(--clr-text-light);
     text-decoration: none;
 }
 
-/*Navbar*/
+/* NAVBAR STRUCTURE*/
 .navbar {
-    position: fixed; /*used to have a fixed navigation bar even scrolling*/
-    
-    /*positioned to top-left corner of the screen*/
-    left: 0;
-    top: 0;
-
-    width: 100%; /*streched to the right-left corner of the screen*/
-    padding: 20px 9%; /*25px top-bottom and 9% in right-left corner*/
-
-    background: var(--clr-block);
-    box-shadow: 0 0 20px #000;
-    
-    /*used to have space between the logo and nav (a) centering*/
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
 
-    /*stacking the .navbar at the very top (highest priority)*/
+    width: 100%;
+    padding: 20px 9%;
     z-index: 100;
+
+    background: #121b24aa;
+    box-shadow: 0 0 20px #000;
+}
+
+.navbar a {
+    color: #d3d3d3;
+    text-decoration: none;
 }
 
 .navbar a i {
     margin-right: 5px; 
     font-size: 20px;
-    color: var(--clr-text-light); 
+    color: #d3d3d3; 
+
+    transition: .5s ease;
 }
 
-/*Logo*/
 .navbar .logo {
-    /*emphasizing the logo of the website through higher font-weight and font-size*/
     font-size: 30px;
     font-weight: 700;
 }
 
-/*<ul> Container*/
 .navbar ul {
-    /*if the <ul> is flex it acts as a flex container and its items <li> is horizontally in default*/
     display: flex;
     align-items: center;
-    margin: 0;
-    padding: 0;
 }
 
-/*Anchor Links in Navbar --Rokkie-or-Nath*/
+.navbar ul li {
+    list-style: none;
+    margin-left: 35px;
+}
+
 .navbar ul a {
     position: relative;
+    
     font-size: 20px;
-    color: var(--clr-text-light);
-    text-decoration: none;
     font-weight: 500;
-    margin-left: 5px;
+
+    transition: .5s ease;
 }
 
-/*Underline Hover in Anchor (before 1s)*/
-.navbar ul a::after {
-    content: '';
+/* DROPDOWN */
+.navbar .dropdown {
+    position: relative;
+}
+
+.navbar .db-content {
+    display: none;
+    
+    position: absolute;
+    top: 100%;
+    
+    padding: 10px 0;
+    border-radius: 8px;
+    min-width: 165px;
+
+    background-color: #121b24aa;
+    box-shadow: 0 3px 3px #000;
+}
+
+.navbar .db-content a {
+    display: block;
+    
+    width: 160px;
+    padding: 10px 20px;
+
+    transition: .5s ease-in-out;
+}
+
+.navbar .db-content a:hover {
+    background-color: #bdc3c755;
+}
+
+.navbar .dropdown:hover .db-content {
+    display: block;
+}
+
+/* BUTTON */
+.navbar button {
+    position: relative;
+    
+    width: 110px;
+    height: 50px;
+
+    margin-left: 40px;
+
+    border: 2px solid #d3d3d3;
+    border-radius: 8px;
+
+    background: transparent;
+    transition: .5s ease;
+}
+
+.navbar button a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    font-weight: 600;
+}
+
+/* HOVER EFFECTS */
+.navbar ul li:hover a:not(.navbar .dropdown .db-content a),
+.navbar ul li:hover a i,
+.navbar ul li.active a,
+.navbar ul li.active a i {
+    color: #00ffcc; 
+}
+
+.navbar ul a:not(button a)::after {
     position: absolute;
     left: 0;
     bottom: -6px;
     width: 100%;
     height: 3px;
-    background: #fff;
+
+    transform: scaleX(0);
     transform-origin: right;
-    border-radius: 5px; 
-    transform: scaleX(0);
-    transition: transform 1s ease; 
+
+    content: '';
+    border-radius: 5px;
+    background: #fff;
+
+    transition: transform 1s ease-in-out;
 }
- 
-/*Underline Hover in Anchor (after 1s)*/
-.navbar ul a:hover::after { 
-    transform-origin: left;
+
+.navbar ul a:not(button a):hover::after {
     transform: scaleX(1);
-    background: var(--clr-text-hover);
+    transform-origin: left;
+    
+    background: #00ffcc;
 }
 
-/*Header Button*/
-.navbar button {
-    width: 110px;
-    height: 50px;
-    background: transparent;
-    border: 2px solid var(--clr-text-bg);
-    outline: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1em;
-    font-weight: 500;
-    margin-left: 40px;
-    transition: 0.5s;
-}
-
-/*Button Hover --Rokkie-or-Nath*/
 .navbar button:hover {
-    background: var(--clr-text-bg);
-    color: var(--clr-text-dark);
+    background: #b23b3b;
 }
 
-.navbar button .login-button {
-    color: var(--clr-text-light);
-    text-decoration: none;
-    display: block;
-}
-
-.navbar .login-button:hover {
-    color: var(--clr-text-dark);
-}
-
-.navbar .login-button:hover::after {
-    transform: scaleX(0);
-    background: transparent;
-}
-
-/*Navigation Text*/
-.navbar ul li {
-    /*rem the bullet in <li> and adding gap or spaces in left of 35px*/
-    list-style: none;
-    margin-left: 35px;
-}
-
-/*Navigation Anchor*/
-.navbar ul li a, 
-.navbar .dropbtn {
-    /*adding font size and weight to the li also adding transition for hover effect*/
-    font-size: 20px;
-    font-weight: 500;
-    transition: .6s;
-}
-
-/*Navigation Hover Color and Set <li> Active*/
-.navbar ul li:hover a,
-.navbar ul li:hover a i,
-.navbar ul li.active a,
-.navbar ul li.active a i {
-    color: var(--clr-text-hover); /*bright blue maybe for strong contrast*/
-}
-
-/*Navigation Dropdown*/
-.navbar .dropdown {
-    position: relative; /*anchor the dropdown to dropbtn and ensure relative to its parent class*/
-}
-
-/*Display block transition*/
-.navbar .dropbtn {
-    transition: .3s;
-}
-
-/* Dropdown Content (Hidden) */
-.navbar .db-content {
-    display: none;
-    position: absolute; /*to not make it move just stack upwards*/
-    top: 100%; /*content bellow button*/
-    left: 0;
-    padding: 10px 0;
-    min-width: 170px;
-    border-radius: 8px;
-    background: var(--clr-block);
-    box-shadow: 0 3px 3px #000;
-    z-index: 101; /*stack into top of nav*/
-}
-
-/* Dropdown Links */
-.navbar .db-content a {
-    padding: 10px 20px; 
-    width: 160px;
-    display: block; /*makes each link a block*/
-    transition: 0.3s ease; 
-}
-
-/* Hover State for Links */
-.navbar .db-content a:hover {
-    background-color: #bdc3c755; /*lighter background of the block*/
-}
-
-/* Show Dropdown Content on Hover */
-.navbar .dropdown:hover .db-content {
-    display: block; /*showing the dropdown again*/
-}
-
-
-/*HOME PAGE STYLE*/
-
-/*Home Content Container*/
-.home {
-    /*making a container that contains flex items ff. and centering its y-axis, customize padding and color*/
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    padding: 60px 9% 0;
-    color: var(--clr-text-light);
-}
-
-/*Home <h1>*/
-.home-info h1 {
-    font-size: 55px;
-    color: #009d80;
-    text-shadow: 2px 2px var(--clr-text-hover);
-}
-
-/*Home <h2>*/
-.home-info h2 {
-    font-size: 33px;
-    margin-top: -15px;
-}
-
-/*Home <p>*/
-.home-info p {
-    font-size: 16px;
-    margin: 10px 0 25px;
-}
-
-.home-info .to-feedback {
-    color: var(--clr-text-hover);
-    transition: .3s ease;
-}
-
-.home-info .to-feedback:hover {
-    color: #009d80;
-}
-
-.feature, 
-.feedback{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    color: var(--clr-text-light);
-    padding: 0;
-    background-color: #121b2499;
-    box-shadow: 5px 0 0 0 #000;
-}
-
-.feature-container, 
-.feedback-container {
-    width: 100%;
-    padding: 60px 9% 0;
-}
-
-.feature-container h1, 
-.feedback-container h1 {
-    margin: 0 0 20px;
-    font-size: 35px;
-    text-align: left;
-}
-
-.feature-container iframe, 
-.feedback-container iframe {
-    border: none;
-    width: 100%;
-    height: calc(100vh - 180px);
-    max-height: 800px;
-    border-radius: 8px;
-}
-
-/*FEED STYLE*/
-
-/*Feed Content Container*/
-.feed {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 100px 5% 0;
-    min-height: 100vh;
-}
-
-.feed-info {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 50px;
-    background: var(--clr-text-bg);
-    border-radius: 3px; 
-    height: auto;
-    margin-bottom: 70px;
-}
-
-.feed-info h2 {
-    font-size: 33px;
-    margin-top: -15px;
-    text-align: left;
-    color: #009d80;
-    text-shadow: 2px 2px #004040;
-}
-
-.feed-info p {
-    font-size: 16px;
-    margin: 10px 0 10px;
-    color: #555;
-    line-height: 1.6;
-    text-align: justify;
-}
-
-#foods .feed-info .float-left,
-#beverages .feed-info .float-left,
-#travel .feed-info .float-left{
-    float: left;
-    margin-right: 30px;
-    box-shadow: 3px 3px var(--clr-img-shadow);
-    border-radius: 5px;
-}
-
-/*Horizonal Rule Border*/
-hr {
-    margin: 100px 0 0 0;
-    border: 1px solid #fff;
-}
-
-/*FEATURE STYLE*/
-
-
-
-/*ABOUT STYLE*/
-/*About Content Container*/
-
-.about-website {
-    /*making a container that contains flex items ff. and centering its y-axis, customize padding and color*/
-    margin-top: 80px;
-    display: flex;
-    align-items: center;
-    padding: 60px 5%;
-    color: var(--clr-text-light);
-    width: 100%;
-}
-
-/*About <h1>*/
-.about-website h1 {
-    text-align: left;
-    font-size: 25px;
-}
-
-/*About <p>*/
-.about-website p {
-    font-size: 16px;
-    margin: 10px 20px 25px;
-    text-align: justify;
-}
-
-.about-website table {
-    color: var(--clr-text-light);
-    width: 100%;
-    border-collapse: collapse; 
-    margin-bottom: 30px;
-}
-
-.about-website th, 
-.about-website td {
-    padding: 10px;
-    text-align: left;
-}
-
-.about-website thead th {
-    text-align: center;
-    font-size: 25px;
-}
-
-.about-website caption {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.about-website table .author-name {
-    color: var(--clr-text-hover);
-}
-
-.about-website table a {
-    font-style: italic;
-}
-
-/*LOGIN AND REGISTRATION STYLE*/
-
-#login, 
-#register {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-#login .forms-container, 
-#register .forms-container {
-    background: var(--clr-block);
-    box-shadow: 0 5px 5px 0 #000;
-    padding: 20px;
-    min-width: 40%;
-    border-radius: 7px;
-}
-
-.forms-container h1 {
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.forms-container input {
-    padding: 7px;
-    width: 100%;
-    border-style: none;
-    border-radius: 2px;
-    margin-bottom: 10px;
-    background-color: #eee;
-}
-
-.forms-container .forms-button {
-    display: flex;
-    justify-content: center;
-}
-
-.forms-container button {
-    width: 100%;
-    padding: 7px;
-    border-radius: 4px;
-    border-style: none;
-    background-color: var(--clr-text-hover);
-    transition: .3s ease;
-}
-
-.forms-container button a {
-    display: block;
-    color: #1f242d;
-    cursor: pointer;
-    transition: .3s ease;
-}
-
-.forms-container button:hover {
-    background-color: #009d80;
-}
-
-.forms-container button:hover a {
+.navbar button:hover a {
     color: #fff;
-}    
-
-.forms-container p {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.forms-container p a {
-    color: var(--clr-text-hover);
-    transition: .3s ease;
-}
-
-.forms-container p a:hover {
-    color: #009d80;
-}
-
-
-/*FEEDBACK*/
-.feedback-container input[type="text"],
-.feedback-container input[type="email"],
-.feedback-container input[type="password"],
-.feedback-container textarea {
-    padding: 7px;
-    width: 100%;
-    border-style: none;
-    border-radius: 2px;
-    margin-bottom: 10px;
-    background-color: #eee;
-}
-
-.feedback-container input[type="radio"] {
-    border-style: none;
-    margin-bottom: 10px;
-    background-color: #eee;
-}
-
-.feedback-container .gender {
-    border-style: none;
-    border-radius: 2px;
-    margin-bottom: 3px;
-}
-
-.feedback-container i {
-    margin-right: 20px;
-}
-
-.feedback-container textarea {
-    resize: none;
-}
-
-.feedback-container .feedback-button {
-    display: flex;
-    justify-content: center;
-}
-
-.feedback-container input[type="file"] {
-    margin-bottom: 10px;
-}
-
-.feedback-container input[type="submit"], 
-.feedback-container input[type="reset"] {
-    width: 100%;
-    padding: 7px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    border-style: none;
-    background-color: var(--clr-text-hover);
-    transition: .3s ease;
-    display: block;
-    color: var(--clr-text-dark);
-    cursor: pointer;
-    transition: .3s ease;
-}
-
-.feedback-container input[type="submit"]:hover, 
-.feedback-container input[type="reset"]:hover {
-    background-color: #009d80;
-    color: #fff;
-}
-
-.feed-feature {
-    color: var(--clr-text-light);
-    padding: 0;
-}
-
-.feed-feature-container {
-    width: 100%;
-    padding: 60px 9% 0;
-    margin-bottom: 60px;
-}
-
-.feed-feature-container h2 {
-    text-shadow: 2px 2px #000;
-    font-size: 35px;
-    text-align: left;
-}
-
-.feed-feature-container video {
-    margin-top: 20px;
-    border-radius: 5px;
-    box-shadow: 2px 2px var(--clr-img-shadow);
-}
-
-.feed-feature-container ol li {
-    margin-left: 30px;
-}
-
-.feed-feature-container a,
-.feed-feature-container ol li a {
-    color: var(--clr-text-hover);
 }
